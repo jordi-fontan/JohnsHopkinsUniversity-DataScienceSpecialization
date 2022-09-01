@@ -1,10 +1,10 @@
 | Which of the choices involves concrete data that doesn't require any inference or
 | generalization?
 
-1: Polling before an election to predict its outcome
-2: Testing the efficacy of a new drug
-3: Constructing a medical image from fMRI data
-4: Recording the results of a statistics exam
+- 1: Polling before an election to predict its outcome
+- 2: Testing the efficacy of a new drug
+- 3: Constructing a medical image from fMRI data
+- 4: Recording the results of a statistics exam
 
 Selection: 4
 
@@ -20,10 +20,10 @@ Selection: 4
   |================================                                               |  40%
 | Which of the following would NOT be a source of bad data?
 
-1: Selection bias
-2: A randomly selected sample of population
-3: Small sample size
-4: A poorly designed study
+- 1: Selection bias
+- 2: A randomly selected sample of population
+- 3: Small sample size
+- 4: A poorly designed study
 
 Selection: 2
 | That's correct!
@@ -33,9 +33,9 @@ Selection: 2
 | population. Which of the following would a scientist using statistical inference
 | techniques consider a problem?
 
-1: Our data sample is representative of the population
-2: Contaminated data
-3: Our study has no bias and is well-designed
+- 1: Our data sample is representative of the population
+- 2: Contaminated data
+- 3: Our study has no bias and is well-designed
 
 Selection: 2
 
@@ -44,10 +44,10 @@ Selection: 2
  |===============================================                                |  60%
 | Which of the following is NOT an example of statistical inference in action?
 
-1: Determining a causative mechanism underlying a disease
-2: Counting sheep
-3: Testing the effectiveness of a medical treatment
-4: Estimating the proportion of people who will vote for a candidate
+- 1: Determining a causative mechanism underlying a disease
+- 2: Counting sheep
+- 3: Testing the effectiveness of a medical treatment
+- 4: Estimating the proportion of people who will vote for a candidate
 
 Selection: 2
 
