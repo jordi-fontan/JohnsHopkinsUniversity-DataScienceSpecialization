@@ -1,0 +1,76 @@
+
+## Chapter 4 : Arithmetics
+
+### 0.Contents
+
+1. Using R as a calculator
+2. Constructing and working with vectors
+3. Vectorized calculations
+
+### 1.Context
+
+ - Statistical analysis involves a lot of calculations and that's what R does best
+ - R goes far beyond employing the classic arithmetic operators/functions by applying vectorized operations to a vector w/o requiring loop over it
+
+
+
+### 2.Numbers
+
+#### 2.1 Basic Arithmetics
+
+
+
+##### 2.1.1 Arithmetics operators
+
+
+
+```{r echo=TRUE}
+
+2+3
+
+
+8-2
+
+3*2
+
+10/5
+
+2^3
+
+7%%3
+
+7%/%3
+
+
+```
+
+
+##### 2.1.2 Vectorizing
+
+To see how this work lets considers an All-Star Basket Game Donation Event
+Vectors represent number of baskets for the 5 games.
+For each basket of Granny---> 120$
+For each basket of Geraldine 145$
+
+ 
+```{r echo=TRUE}
+baskets.of.Granny <- c(12,4,4,6,9,3)
+baskets.of.Geraldine <- c(5,3,2,2,12,9)
+Granny.money <- baskets.of.Granny *120
+Granny.money
+Geraldine.money <- baskets.of.Geraldine * 145
+Geraldine.money
+total.money<-Granny.money + Geraldine.money
+
+total.money
+
+
+
+```
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
