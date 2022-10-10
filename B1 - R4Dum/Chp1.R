@@ -59,19 +59,49 @@ y
 x=y
 
 y<-5
+
 x
 y
 
 
 # The values of the two variables themselves don’t change unless you assign a new  value. 
-# You can check this by typing the following:  > x  [1] 1 2 3 4 5  > y  [1] 10    
-#Now create a new variable z, assign it the value of x+y, and print its value:  > z <- x + y  > z  [1] 11 12 13 14 15   
+# You can check this by typing the following: 
 
 
-#Variables also can take on text values. You can assign the value “Hello” to a vari-  able called h, for example, by presenting the text to R inside quotation marks, like  this:  > h <- “Hello”  > h  [1] “Hello”    You must present text or character values to R inside quotation marks — ei-  ther single or double. R accepts both. So both h <- “Hello” and h <- ‘Hello’  are examples of valid R syntax.  In “Using vectors,” earlier in this chapter, you use the c() function to combine nu-  meric values into vectors. This technique also works for text. Try it:  > hw <- c(“Hello”, “world!”)  > hw  [1] “Hello” “world!”   
-# You can use the paste() function to concatenate multiple text elements.
-#By default,  paste() puts a space between the different elements, like this:  > paste(“Hello”, “world!”)  [1] “Hello world!”  
+> x  [1] 1 2 3 4 5  > y  [1] 10    
+#Now create a new variable z, assign it the value of x+y, and print its value:  > 
+x<-c(1,2,3)
+y<-10
+z <- x + y  # 
+z
+    
+
+
+#### Variables also can take text values. 
+
+
+# You must present text or character values to R inside quotation marks 
+# either single or double. R accepts both.
+
+h <- 'Hello'  
+h  
+i<-"ilolo"
+i
+
+# Before we used the c() function to combine numeric values into vectors.
+# This technique also works for text. 
+ 
+hw <- c('Hello', 'world!') 
+hw     
+
+  #### Paste Function
+  
+  # You can use the paste() function to concatenate multiple text elements.
+#By default,  paste() puts a space between the different elements, 
+
+paste("Hello”, 'world!')  
 
 
 
-#Talking back to the user   
+
+######## Talking back to the user   
