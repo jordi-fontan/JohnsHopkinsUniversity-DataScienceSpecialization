@@ -1,40 +1,14 @@
 ---
-title: "Untitled"
+title: "Subsetting R Objects"
 output: github_document
 ---
 
-
-
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-
-```r
-summary(cars)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-![](C1-10-Subsetting_files/figure-gfm/pressure-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
 # 10. Subsetting R Objects
@@ -55,120 +29,99 @@ There are three operators that can be used to extract subsets of R objects.
 Here we extract the first four elements of the vector.
 
 
-
-```r
+```{r}
  x <- c("a", "b", "c", "c", "d", "a")
  x[1] ## Extract the first element
-```
-
-```
-## [1] "a"
-```
-
-```r
  x[2] ## Extract the second element
-```
 
-```
-## [1] "b"
-```
-
-```r
-  x[1:4]
-```
-
-```
-## [1] "a" "b" "c" "c"
-```
-
-```r
+ x[1:4]
  x[c(1, 3, 4)]
-```
 
-```
-## [1] "a" "c" "c"
 ```
 
 ### b.Logical Indexes and Vectors
 
 -We can also pass a logical sequence to the [ operator to extract elements of a vector that satisfy a given condition. For example, here we want the elements of x that come lexicographically after the letter “a”.
 
+```{r}
+ x <- c("a", "b", "c", "c", "d", "a") # for context porpuses
 
-```r
- u <- x > "a"
+ u <- (x > "a")  # This is a logical vector
  u
-```
+
+ x[u]  # We can pass the logical vextor to [ ]
+ x[x > "a"] # Or directly the condition from whom vector was created
 
 ```
-## [1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-```
 
-```r
- x[u]
-```
-
-```
-## [1] "b" "c" "c" "d"
-```
-
-```r
- x[x > "a"]
-```
-
-```
-## [1] "b" "c" "c" "d"
-```
-
-Another, more compact, way to do this would be to skip the creation of a logical vector and just
-subset the vector directly with the logical expression.
+Another, more compact, way to do this would be to skip the creation of a logical vector and just subset the vector directly with the logical expression.
 
 
 
 ## 10.2 Subsetting a Matrix
-Watch a video of this section²
-Matrices can be subsetted in the usual way with (i,j) type indices. Here, we create simple 23 matrix
-with the matrix function.
-> x <- matrix(1:6, 2, 3)
-> x
-[,1] [,2] [,3]
-[1,] 1 3 5
-[2,] 2 4 6
-We can access the (1; 2) or the (2; 1) element of this matrix using the appropriate indices.
-> x[1, 2]
-[1] 3
-> x[2, 1]
-[1] 2
-Indices can also be missing. This behavior is used to access entire rows or columns of a matrix.
-> x[1, ] ## Extract the first row
-[1] 1 3 5
-> x[, 2] ## Extract the second column
-[1] 3 4
-Dropping matrix dimensions
-By default, when a single element of a matrix is retrieved, it is returned as a vector of length 1 rather
-than a 11 matrix. Often, this is exactly what we want, but this behavior can be turned off by setting
-drop = FALSE.
-²https://youtu.be/FzjXesh9tRw
-Subsetting R Objects 41
-> x <- matrix(1:6, 2, 3)
-> x[1, 2]
-[1] 3
-> x[1, 2, drop = FALSE]
-[,1]
-[1,] 3
-Similarly, when we extract a single row or column of a matrix, R by default drops the dimension of
-length 1, so instead of getting a 1  3 matrix after extracting the first row, we get a vector of length
-3. This behavior can similarly be turned off with the drop = FALSE option.
-> x <- matrix(1:6, 2, 3)
-> x[1, ]
-[1] 1 3 5
-> x[1, , drop = FALSE]
-[,1] [,2] [,3]
-[1,] 1 3 5
+
+### a. Usual way
+
+
+Matrices can be subsetted in the usual way with (i,j) type indices. Here, we create simple 23 matrix with the matrix function.
+
+
+```{r}
+
+ x <- matrix(1:6, 2, 3)
+ x
+
+
+#We can access the (1; 2) or the (2; 1) element of this matrix using the appropriate indices.
+ x[1, 2]
+
+ x[2, 1]
+
+ #Indices can also be missing. 
+# This behavior is used to access entire rows or columns of a matrix.
+
+ x[1, ] ## Extract the first row
+
+ x[, 2] ## Extract the second column
+
+
+```
+
+### b. Dropping matrix dimensions
+
+By default, when a single element of a matrix is retrieved, it is returned as a vector of length 1 rather than a 11 matrix. Often, this is exactly what we want, but this behavior can be turned off by setting drop = FALSE.
+
+```{r}
+
+ x <- matrix(1:6, 2, 3)
+ x[1, 2]
+
+ x[1, 2, drop = FALSE]
+
+
+```
+
+Similarly, when we extract a single row or column of a matrix, R by default drops the dimension of length 1, so instead of getting a 1  3 matrix after extracting the first row, we get a vector of length 3. 
+ This behavior can similarly be turned off with the drop = FALSE option.
+
+```{r}
+ x <- matrix(1:6, 2, 3)
+ x[1, ]
+
+ x[1, , drop = FALSE]
+
+
+
+```
 Be careful of R’s automatic dropping of dimensions. This is a feature that is often quite useful
 during interactive work, but can later come back to bite you when you are writing longer programs
 or functions.
-10.3 Subsetting Lists
-Watch a video of this section³
+
+
+
+
+## 10.3 Subsetting Lists
+
 Lists in R can be subsetted using all three of the operators mentioned above, and all three are used
 for different purposes.
 > x <- list(foo = 1:4, bar = 0.6)
