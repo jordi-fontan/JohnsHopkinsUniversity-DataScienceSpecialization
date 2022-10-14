@@ -1,7 +1,7 @@
 
-| In this lesson, we'll cover matrices and data frames. Both represent
-| 'rectangular' data types, meaning that they are used to store tabular data,
-| with rows and columns.
+# In this lesson, we'll cover matrices and data frames. Both represent
+# 'rectangular' data types, meaning that they are used to store tabular data,
+# with rows and columns.
 
 | The main difference, as you'll see, is that matrices can only contain a
 | single class of data, while data frames can consist of many different classes
