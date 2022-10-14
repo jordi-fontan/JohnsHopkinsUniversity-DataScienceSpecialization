@@ -99,9 +99,85 @@ hw
   # You can use the paste() function to concatenate multiple text elements.
 #By default,  paste() puts a space between the different elements, 
 
-paste("Hello”, 'world!')  
+paste('Hello', 'world!')  
 
 
 
 
 ######## Talking back to the user   
+##### readline() function
+
+
+#  You can write R scripts that have some interaction with a user. 
+# To ask the user  questions, you can use the readline() function. 
+ h <- 'Hello'  
+ yourname <- readline('What is your name?')  
+ paste(h, yourname) 
+ 
+ 
+ # it would be much better to send these three lines of code simultaneously 
+ # to R and get them evaluated in  one go. In the next section, 
+ 
+ #####    Sourcing a Script 
+# Until now, you’ve worked directly in the R console and issued individual 
+# com-  mands in an interactive style of coding.
+ # In other words, you issue a command, R re-  sponds, you issue the next command, 
+ # R responds, and so on. 
+ 
+ # In this section, you kick it up a notch and tell R to perform several commands
+ # one  after the other without waiting for additional instructions. 
+ # Because the R function  to run an entire script is source(), 
+ # R users refer to this process as sourcing a script.  
+ # To prepare your script to be sourced, you first write the entire script in an editor
+ # window. In RStudio, for example, the editor window is in the top-left corner 
+ # of the  screen (refer to Figure 2-5). Whenever you press Enter in the editor window,
+ # the  cursor moves to the next line, as in any text editor. 
+ # Type the following lines of code in the editor window.
+ # Notice that the last line con-  tains a small addition to the code you saw earlier:
+ # the print() function. 
+h <- 'Hello' 
+yourname <- readline('What is your name?') 
+print(paste(h, yourname))  
+# 
+# Send an individual line of code from the editor to the console. Click the line of  code you want to run, and then press Ctrl+R in RGui. In RStudio, you can  press Ctrl+Enter or click the Run button.  Send a block of highlighted code to the console. Select the block of code you  want to run, and then press Ctrl+R (in RGui) or Ctrl+Enter (in RStudio).  Send the entire script to the console (which is called sourcing a script). In  RGui, click anywhere in your script window, and then choose Edit⇒Run all.  In RStudio, click anywhere in the source editor, and press Ctrl+Shift+Enter or 
+# click the Source button. 
+
+### Getting Help
+
+?paste
+help(paste)
+
+### Managing workspace
+
+ls() # list variables
+
+
+### Remove vars
+
+print(x)
+rm(x)
+print(x)
+x<-1:5
+print(x)
+
+## Saving vars and workspace
+
+save(x)
+save.image() # saves entire workspace
+
+## Working Directory
+
+getwd()
+setwd('c://sharedData')
+getwd()
+setwd('c://sharedData//projects//edu//JHU-DSS')
+getwd()
+
+## saving workspace/var
+
+save(yourname, file='yourname.rda')  
+rm(yourname)
+print(yourname)
+
+load('yourname.rda')  
+print(yourname)

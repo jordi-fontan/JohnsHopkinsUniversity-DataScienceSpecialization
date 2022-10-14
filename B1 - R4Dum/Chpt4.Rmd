@@ -22,11 +22,14 @@
 
 ##### 2.1.1 Arithmetics operators
 
+sum, rest, multiplication, division, power, mod, int div 
 
 
 ```{r echo=TRUE}
 
-2+3
+
+
+2+3 
 
 
 8-2
@@ -70,7 +73,43 @@ total.money
 
 
 
-## Including Plots
+## 2.2 Math Functions
 
-You can also embed plots, for example:
+
+
+Some of the mathematical functions in R (There are thousands)
+
+abs(x)
+log(x, base=y)
+exp(x)
+sqrt(x)
+factorial(x)
+choose(x,y)
+
+```{r echo=TRUE}
+abs(-3)
+log(9, base=3)
+exp(1)
+sqrt(8)
+factorial(5)
+choose(6,2) # 6!/((6-2)!2!)
+```
+
+
+### Log/Exp Functions
+
+```{r echo=TRUE}
+
+
+log(1:3) # vectorized
+log(1:3,base=6) # vectorized
+log10(500)
+log2(1024)
+
+x<-log(1:5) # vectorized
+x
+exp(x) # vectorized
+```
+
+
 
